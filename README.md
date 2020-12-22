@@ -2,6 +2,16 @@
 
 Enables creating simple graphs based on census API
 
+## Getting Started 
+
+### SET CENSUS API KEY
+
+- apply for a key: https://api.census.gov/data/key_signup.html
+- create a `.env` file in the project root directory 
+- set an environment variable with your api key as follows:
+  - `REACT_APP_CENSUS_API_KEY=YOUR_API_KEY_HERE`
+- `yarn start`
+
 ## Tech used
 
 - React, Redux, TypeScript
@@ -9,19 +19,12 @@ Enables creating simple graphs based on census API
 - Styled-components, CSS Grid
 - Firebase Hosting
 
-## Resources 
+## Resources
 
 - [official docs](https://www.census.gov/data/developers.html)
 - [slack](https://join.slack.com/t/uscensusbureau/shared_invite/enQtNzI2MTY0NjA4MzU1LTYxOGE1YTVmMmU2ZjM5MjE0Yzk1NTg5Yjk4NTMxMzhhM2RjMGU5ZDMxMDgxMzMyOThiMTVlZDE0Y2ZiMjQzYjM)
 
-## Getting Started 
-
-- apply for a key: https://api.census.gov/data/key_signup.html
-- place key in `/api-key.txt`
-- `yarn install`
-- `yarn start`
-
-## API
+## American Community Survey (ACS) API
 
 ### Example calls
 
@@ -30,9 +33,13 @@ Enables creating simple graphs based on census API
 
 ### Means of Transportation
 
-- [Means of transporation data fields](https://api.census.gov/data/2019/acs/acs1/subject/groups/S0804.html)
+- [Means of transportation data fields](https://api.census.gov/data/2019/acs/acs1/subject/groups/S0804.html)
 - [Subject Table web browser example (means of transportation)](https://data.census.gov/cedsci/table?q=ACSST1Y2019&t=Commuting&tid=ACSST1Y2019.S0804&moe=false&tp=false&hidePreview=true)
 - [Means of trans for counties in CA example api call](https://api.census.gov/data/2019/acs/acs1/subject?get=NAME,S0804_C01_001E,S0804_C02_001E,S0804_C03_001E,S0804_C04_001E&for=county:*&in=state:06)
+
+---
+
+# create-react-app docs
 
 ## Available Scripts
 
@@ -76,3 +83,5 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+[]: https://api.census.gov/data/key_signup.html
