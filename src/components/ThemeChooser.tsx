@@ -22,7 +22,7 @@ const ThemeSquare = styled.div`
   &.selected {
     border-color: ${props => props.theme.borders}; 
   }
-  @media (max-width: 600px) {
+  @media (max-width: 500px) {
     width: 15px;
   }
 `;
@@ -32,7 +32,7 @@ const ThemeStripe = styled.div`
   margin: 1px 0;
   width: 20px;
   height: 5px;
-  @media (max-width: 600px) {
+  @media (max-width: 500px) {
     width: 15px;
   }
 `;

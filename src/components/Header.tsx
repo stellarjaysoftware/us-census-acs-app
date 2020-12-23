@@ -8,7 +8,10 @@ import styled from "styled-components";
 export const AppHeader = styled.header`
   margin: 0 20px;
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 2fr 1fr 100px;
+  @media (max-width: 500px) {
+    grid-template-columns: 2fr 1fr;
+  }
 `;
 export const AppTitle = styled.div`
   color: #333;

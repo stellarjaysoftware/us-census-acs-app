@@ -8,6 +8,7 @@ import {TransportationResults} from "./TransportationResults";
 import {createGlobalStyle, ThemeProvider} from "styled-components";
 import {Header} from "./Header";
 import {Footer} from "./Footer";
+import {Github} from "./Github";
 
 export const GlobalStyle = createGlobalStyle<{theme: any}>`
   body {
@@ -24,19 +25,18 @@ export const App = () => {
   const currentTheme = Themes[theme];
   return (
     <ThemeProvider theme={currentTheme}>
-      <React.Fragment>
-        <GlobalStyle />
-        <AppStyles.AppWrapper>
-          <Header setTheme={setTheme} />
-          {/*<Navigation />*/}
-          <AppStyles.AppContent>
-            <AppStyles.H1>Means of Transportation</AppStyles.H1>
-            <TransportationForm />
-            <TransportationResults />
-            <Footer />
-          </AppStyles.AppContent>
-        </AppStyles.AppWrapper>
-      </React.Fragment>
+      <GlobalStyle />
+      <Github />
+      <AppStyles.AppWrapper>
+        <Header setTheme={setTheme} />
+        {/*<Navigation />*/}
+        <AppStyles.AppContent>
+          <AppStyles.H1>Means of Transportation</AppStyles.H1>
+          <TransportationForm />
+          <TransportationResults />
+          <Footer />
+        </AppStyles.AppContent>
+      </AppStyles.AppWrapper>
     </ThemeProvider>
   );
 }
