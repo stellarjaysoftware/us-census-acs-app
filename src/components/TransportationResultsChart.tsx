@@ -68,17 +68,17 @@ const _TransportationResultsChart = (props: Props):JSX.Element => {
         {
           label: CHART_LABELS.DROVE_ALONE,
           data: droveAloneData,
-          backgroundColor: props.theme.chart.primary,
+          backgroundColor: props.theme.primary,
         },
         {
           label: CHART_LABELS.CARPOOLED,
           data: carpooledData,
-          backgroundColor: props.theme.chart.secondary,
+          backgroundColor: props.theme.secondary,
         },
         {
           label: CHART_LABELS.PUBLIC_TRANSIT,
           data: publicTransitData,
-          backgroundColor: props.theme.chart.accent,
+          backgroundColor: props.theme.accent,
         },
       ],
     }
@@ -101,14 +101,14 @@ const _TransportationResultsChart = (props: Props):JSX.Element => {
           label: 'Means of Transportation',
           data: pieData,
           backgroundColor: [
-            props.theme.chart.primary,
-            props.theme.chart.secondary,
-            props.theme.chart.accent,
+            props.theme.primary,
+            props.theme.secondary,
+            props.theme.accent,
           ],
           borderColor: [
-            props.theme.chart.primary,
-            props.theme.chart.secondary,
-            props.theme.chart.accent,
+            props.theme.primary,
+            props.theme.secondary,
+            props.theme.accent,
           ],
           borderWidth: 1,
         },

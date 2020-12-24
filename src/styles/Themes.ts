@@ -1,52 +1,45 @@
-export let Themes: { aqua: { secondary: string; borders: string; neutral: string; accent: string; chart: { secondary: string; accent: string; primary: string }; primary: string }; charger: { secondary: string; borders: string; neutral: string; accent: string; chart: { secondary: string; accent: string; primary: string }; primary: string }; burnt: { secondary: string; borders: string; neutral: string; accent: string; chart: { secondary: string; accent: string; primary: string }; primary: string }; bam: { secondary: string; borders: string; neutral: string; accent: string; chart: { secondary: string; accent: string; primary: string }; primary: string } };
-Themes = {
-  "charger": {
-    primary: "#23120b",
-    secondary: "#21209c",
-    accent: "#fdb827",
-    neutral: "#ddd",
-    borders: "#999",
-    chart: {
-      primary: "#23120b",
-      secondary: "#21209c",
-      accent: "#fdb827",
-    }
-  },
-  // https://colorhunt.co/palette/219735
-  "aqua": {
-    primary: "#303841",
-    secondary: "#00adb5",
-    accent: "#ff5722",
-    neutral: "#eeeeee",
-    borders: "#999",
-    chart: {
-      primary: "#303841",
-      secondary: "#00adb5",
-      accent: "#ff5722",
-    }
-  },
-  "burnt": {
-    primary: "#fc8621",
-    secondary: "#c24914",
-    accent: "#682c0e",
-    neutral: "#f9e0ae",
-    borders: "#682c0e",
-    chart: {
-      primary: "#fc8621",
-      secondary: "#c24914",
-      accent: "#682c0e",
-    }
-  },
-  "bam": {
-    primary: "#120078",
-    secondary: "#9d0191",
-    accent: "#fd3a69",
-    neutral: "#fecd1a",
-    borders: "#120078",
-    chart: {
-      primary: "#120078",
-      secondary: "#9d0191",
-      accent: "#fd3a69",
-    }
+export class Theme {
+  primary: string;
+  secondary: string;
+  accent: string;
+  neutral: string;
+  borders: string;
+  constructor(primary:string, secondary:string, accent:string, neutral:string, borders:string) {
+    this.primary = primary;
+    this.secondary = secondary;
+    this.accent = accent;
+    this.neutral = neutral;
+    this.borders = borders;
   }
-};
+}
+
+export const Themes = {
+  charger: new Theme(
+    "#23120b",
+    "#21209c",
+    "#fdb827",
+    "#ddd",
+    "#999"
+  ),
+  aqua: new Theme(
+    "#303841",
+    "#00adb5",
+    "#ff5722",
+    "#eeeeee",
+    "#999"
+  ),
+  burnt: new Theme(
+    "#fc8621",
+    "#c24914",
+    "#682c0e",
+    "#f9e0ae",
+    "#682c0e"
+  ),
+  bam: new Theme(
+    "#120078",
+    "#9d0191",
+    "#fd3a69",
+    "#fecd1a",
+    "#120078"
+  )
+}

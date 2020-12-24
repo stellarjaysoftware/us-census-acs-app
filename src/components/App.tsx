@@ -9,8 +9,9 @@ import {createGlobalStyle, ThemeProvider} from "styled-components";
 import {Header} from "./Header";
 import {Footer} from "./Footer";
 import {Github} from "./Github";
+import {DEFAULT_THEME, THEME_KEY} from "../constants";
 
-export const GlobalStyle = createGlobalStyle<{theme: any}>`
+export const GlobalStyle = createGlobalStyle<{theme: {neutral:string}}>`
   body {
     background-color: ${props => props.theme.neutral};
     margin: 0;
@@ -19,7 +20,7 @@ export const GlobalStyle = createGlobalStyle<{theme: any}>`
 `
 
 export const App = () => {
-  const [theme, setTheme] = useState('charger');
+  const [theme, setTheme] = useState(localStorage.getItem(THEME_KEY) || DEFAULT_THEME);
 
   // @ts-ignore
   const currentTheme = Themes[theme];
@@ -28,7 +29,10 @@ export const App = () => {
       <GlobalStyle />
       <Github />
       <AppStyles.AppWrapper>
-        <Header setTheme={setTheme} />
+        <Header setTheme={(theme:string) => {
+          localStorage.setItem(THEME_KEY, theme);
+          setTheme(theme);
+        }} />
         {/*<Navigation />*/}
         <AppStyles.AppContent>
           <AppStyles.H1>Means of Transportation</AppStyles.H1>

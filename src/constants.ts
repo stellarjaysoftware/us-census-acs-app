@@ -15,3 +15,5 @@ export const CHART_COLORS = {
   CARPOOLED: 'rgb(54, 162, 235)',
   PUBLIC_TRANSIT: 'rgb(75, 192, 192)'
 }
+export const THEME_KEY = 'theme';
+export const DEFAULT_THEME = 'charger';

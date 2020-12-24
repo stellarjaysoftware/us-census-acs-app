@@ -1,13 +1,6 @@
 import React from 'react';
-import { Themes } from '../styles/Themes';
+import {Themes} from '../styles/Themes';
 import styled, { withTheme } from 'styled-components';
-
-interface Props {
-  setTheme: Function,
-  theme: {
-    primary: string
-  }
-}
 
 const ThemeSquare = styled.div`
   display: inline-block;
@@ -41,10 +34,17 @@ const ThemeLink = styled.a`
   margin-right: 3px;
 `;
 
+interface Props {
+  setTheme: Function,
+  theme: {
+    primary: string
+  }
+}
+
 const _ThemeChooser = (props:Props) => {
   return (
     <>
-      {Object.entries(Themes).map(([key, theme], index) => {
+      {Object.entries(Themes).map(([key, theme]) => {
         return (
           <React.Fragment key={`theme-${key}`}>
             <ThemeLink onClick={()=> props.setTheme(key)}>
