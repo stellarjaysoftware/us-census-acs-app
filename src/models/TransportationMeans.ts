@@ -1,5 +1,6 @@
 export class TransportationMeans {
   geoName: string;
+  fieldType: string;
   total: number | null;
   droveAlone: number | null;
   carpooled: number | null;
@@ -7,8 +8,9 @@ export class TransportationMeans {
   droveAlonePercent: number | null;
   carpooledPercent: number | null;
   publicTransitPercent: number | null;
-  constructor(geoName: string, total: number, droveAlone: number, carpooled: number, publicTransit: number) {
+  constructor({geoName, fieldType, total, droveAlone, carpooled, publicTransit}:{geoName: string, fieldType:string, total: number, droveAlone: number, carpooled: number, publicTransit: number}) {
     this.geoName = geoName;
+    this.fieldType = fieldType;
     this.total = total === -999999999 ? null : total;
     this.droveAlone = droveAlone === -999999999 ? null : droveAlone;
     this.carpooled = carpooled === -999999999 ? null : carpooled;

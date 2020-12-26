@@ -65,6 +65,7 @@ const _TransportationResults = (props:Props) => {
         <AppStyles.ResultsViewSelect className={(showChart ? 'selected' : '')}>
           <AppStyles.ResultsViewLink onClick={() => setShowChart(true)}>chart</AppStyles.ResultsViewLink>
         </AppStyles.ResultsViewSelect>
+      {/* additional charts. ex: {some_county} by Age */}
       </div>
       <AppStyles.ResultsContentWrapper>
         {!showChart ?

@@ -3,6 +3,7 @@ import { Dispatch } from 'redux';
 import {ActionTypes} from "./types";
 import {TransportationMeans} from "../models/TransportationMeans";
 import {Geography, GeoElement} from "../models/Geography";
+import {TRANSPORT_FIELDS} from "../constants";
 
 export interface FetchTransportAction {
   type: ActionTypes.fetchTransportation,
@@ -17,12 +18,22 @@ const censusAPI:CensusAPI = new CensusAPI();
 //  ex: [["NAME","S0804_C01_001E","S0804_C02_001E","S0804_C03_001E","S0804_C04_001E","state","county"],
 //    ["Lake County, California","21304","13926","2585","242","06","033"],
 //    ["Yuba County, California","25787","20283","3128","308","06","115"]]
-export const fetchTransportation = (geo:Geography, years:number[] = [2019]):Function => {
+export const fetchTransportationMeans = (field:string, geo:Geography, years:number[] = [2019]):Function => {
   return async (dispatch: Dispatch) => {
-    // if multiple years have been selected we need to make multiple fetchTransportationMeans calls
+    // if multiple years have been selected we need to make multiple fetchTransportationMeansTotalCounts calls
     let transportObjects:TransportationMeans[] = [];
     try {
-      transportObjects = await censusAPI.fetchTransportationMeans(geo);
+      switch(field) {
+        case TRANSPORT_FIELDS.AGE:
+          // transportObjects = await censusAPI.fetchTransportationMeansTotalCounts(geo);
+          break;
+        case TRANSPORT_FIELDS.SEX:
+          // transportObjects = await censusAPI.fetchTransportationMeansTotalCounts(geo);
+          break;
+        default:
+          transportObjects = await censusAPI.fetchTransportationMeansTotalCounts(geo);
+          break;
+      }
     } catch (error) {
       console.error(error);
     }

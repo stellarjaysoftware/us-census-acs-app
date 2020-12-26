@@ -22,14 +22,13 @@ export const ResultsBody = styled.tbody`
 `;
 export const ResultsRow = styled.tr`
   display: grid;
-  grid-template-columns: 40px minmax(100px, 1fr) repeat(3, 1fr) 100px;
+  grid-template-columns: 40px minmax(100px, 1fr) repeat(3, 1fr) 100px; //  100px
   justify-items: stretch;
   &:nth-child(odd) td {
     background: #eee;
   }
   cursor: pointer;
 `;
-
 
 export const Cell = styled.td`
   overflow: hidden;

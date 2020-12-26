@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from "react-redux";
 import { Bar, Pie } from 'react-chartjs-2';
 import {StoreState} from "../reducers";
-import {CHART_LABELS} from "../constants";
+import {TRANSPORT_VARS} from "../constants";
 import {TransportationMeans} from "../models/TransportationMeans";
 import * as AppStyles from "../styles/App";
 import styled, { withTheme } from 'styled-components';
@@ -66,17 +66,17 @@ const _TransportationResultsChart = (props: Props):JSX.Element => {
       labels: labels,
       datasets: [
         {
-          label: CHART_LABELS.DROVE_ALONE,
+          label: TRANSPORT_VARS.DROVE_ALONE,
           data: droveAloneData,
           backgroundColor: props.theme.primary,
         },
         {
-          label: CHART_LABELS.CARPOOLED,
+          label: TRANSPORT_VARS.CARPOOLED,
           data: carpooledData,
           backgroundColor: props.theme.secondary,
         },
         {
-          label: CHART_LABELS.PUBLIC_TRANSIT,
+          label: TRANSPORT_VARS.PUBLIC_TRANSIT,
           data: publicTransitData,
           backgroundColor: props.theme.accent,
         },
@@ -95,7 +95,7 @@ const _TransportationResultsChart = (props: Props):JSX.Element => {
     ];
 
     return {
-      labels: [CHART_LABELS.DROVE_ALONE, CHART_LABELS.CARPOOLED, CHART_LABELS.PUBLIC_TRANSIT],
+      labels: [TRANSPORT_VARS.DROVE_ALONE, TRANSPORT_VARS.CARPOOLED, TRANSPORT_VARS.PUBLIC_TRANSIT],
       datasets: [
         {
           label: 'Means of Transportation',

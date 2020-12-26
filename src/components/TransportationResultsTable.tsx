@@ -4,7 +4,7 @@ import {StoreState} from "../reducers";
 import {connect} from "react-redux";
 import * as AppStyles from "../styles/App";
 import * as Style from "../styles/ResultsTable";
-import {CHART_LABELS} from "../constants";
+import {TRANSPORT_VARS} from "../constants";
 
 interface Props {
   transportation: TransportationMeans[],
@@ -63,17 +63,18 @@ const _TransportationResultsTable = (props: Props) => {
               <AppStyles.BoldLinkButton title="Name" onClick={() => handleSort('geoName')}>Name</AppStyles.BoldLinkButton>
             </Style.HeaderCell>
             <Style.HeaderCell as="th">
-              <AppStyles.BoldLinkButton title={CHART_LABELS.DROVE_ALONE} onClick={() => handleSort('droveAlonePercent')}>{CHART_LABELS.DROVE_ALONE}</AppStyles.BoldLinkButton>
+              <AppStyles.BoldLinkButton title={TRANSPORT_VARS.DROVE_ALONE} onClick={() => handleSort('droveAlonePercent')}>{TRANSPORT_VARS.DROVE_ALONE}</AppStyles.BoldLinkButton>
             </Style.HeaderCell>
             <Style.HeaderCell as="th">
-              <AppStyles.BoldLinkButton title={CHART_LABELS.CARPOOLED} onClick={() => handleSort('carpooledPercent')}>{CHART_LABELS.CARPOOLED}</AppStyles.BoldLinkButton>
+              <AppStyles.BoldLinkButton title={TRANSPORT_VARS.CARPOOLED} onClick={() => handleSort('carpooledPercent')}>{TRANSPORT_VARS.CARPOOLED}</AppStyles.BoldLinkButton>
             </Style.HeaderCell>
             <Style.HeaderCell as="th">
-              <AppStyles.BoldLinkButton title={CHART_LABELS.PUBLIC_TRANSIT} onClick={() => handleSort('publicTransitPercent')}>{CHART_LABELS.PUBLIC_TRANSIT}</AppStyles.BoldLinkButton>
+              <AppStyles.BoldLinkButton title={TRANSPORT_VARS.PUBLIC_TRANSIT} onClick={() => handleSort('publicTransitPercent')}>{TRANSPORT_VARS.PUBLIC_TRANSIT}</AppStyles.BoldLinkButton>
             </Style.HeaderCell>
             <Style.HeaderCell as="th" className="right">
               <AppStyles.BoldLinkButton title="total" onClick={() => handleSort('total')}>Total</AppStyles.BoldLinkButton>
             </Style.HeaderCell>
+            {/*<Style.HeaderCell as="th">📊+</Style.HeaderCell>*/}
           </Style.ResultsRow>
         </Style.ResultHeader>
         <Style.ResultsBody>
@@ -98,6 +99,15 @@ const _TransportationResultsTable = (props: Props) => {
                 {(showCounts?`(${transportMeans.publicTransit})`:null)}
               </Style.BodyCell>
               <Style.BodyCell className="right">{transportMeans.total}</Style.BodyCell>
+              {/*<Style.BodyCell>*/}
+              {/*  <select>*/}
+              {/*    <option>Total</option>*/}
+              {/*    <option>Age</option>*/}
+              {/*    <option>Sex</option>*/}
+              {/*    <option>Race</option>*/}
+              {/*    <option>Earnings</option>*/}
+              {/*  </select>*/}
+              {/*</Style.BodyCell>*/}
             </Style.ResultsRow>
           );
         })}

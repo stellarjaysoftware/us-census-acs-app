@@ -1,17 +1,18 @@
 import React, {useState, useEffect} from 'react';
 import {StoreState} from "../reducers";
 import {connect} from "react-redux";
-import {fetchTransportation, fetchStates} from "../actions";
+import {fetchTransportationMeans, fetchStates} from "../actions";
 import {TransportationMeans} from "../models/TransportationMeans";
 import {Geography} from "../models/Geography";
 // import {YearSelect} from "./YearSelect";
 import {GeoSelect} from './GeoSelect';
 import * as AppStyles from "../styles/App";
 import styled from "styled-components";
+import {TRANSPORT_FIELDS} from "../constants";
 
 interface Props {
   transportation: TransportationMeans[],
-  fetchTransportation: any,
+  fetchTransportationMeans: any,
   fetchStates: any
 }
 
@@ -49,7 +50,7 @@ const _TransportationForm = (props:Props): JSX.Element => {
   const handleGet = async ():Promise<void> => {
     setLoading(true);
     setHasFormUpdate(false);
-    await props.fetchTransportation(geo); // send in form selections
+    await props.fetchTransportationMeans(TRANSPORT_FIELDS.TOTAL, geo); // send in form selections
     setLoading(false);
   }
 
@@ -88,7 +89,7 @@ const mapStateToProps = ({ transportation }: StoreState): {transportation: Trans
 export const TransportationForm = connect(
   mapStateToProps,
   {
-    fetchTransportation: fetchTransportation,
+    fetchTransportationMeans: fetchTransportationMeans,
     fetchStates: fetchStates
   }
 )(_TransportationForm);
